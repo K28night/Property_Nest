@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #e6f9e6; /* Light green background */
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px; /* Maximum width of the chat container */
+    height: 100%;
+    max-height: 80vh; /* Maximum height of the chat container */
+    border: 1px solid #b3d9b3; /* Light green border */
+    border-radius: 8px;
+    background: #ffffff; /* White background for the chat container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.chat-box {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    border-bottom: 1px solid #b3d9b3; /* Light green border */
+}
+
+.chat-box .message {
+    margin-bottom: 10px;
+}
+
+.chat-box .message:nth-child(odd) {
+    background-color: #f2f8f2; /* Light green background for messages */
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #b3d9b3; /* Light green border */
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #b3d9b3; /* Light green border */
+    border-radius: 4px;
+    background-color: #f9fff9; /* Very light green background */
+}
+
+.chat-input button {
+    padding: 10px;
+    margin-left: 10px;
+    border: none;
+    background: #4CAF50; /* Green button background */
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.chat-input button:hover {
+    background: #45a049; /* Darker green on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .chat-container {
+        max-width: 100%;
+        max-height: 90vh; /* Adjust maximum height for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .chat-input {
+        flex-direction: column;
+    }
+
+    .chat-input input {
+        margin-bottom: 10px;
+    }
+
+    .chat-input button {
+        width: 100%;
+    }
+}
