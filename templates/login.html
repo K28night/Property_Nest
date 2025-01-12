@@ -1,0 +1,16 @@
+<html>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+<body>
+    <div class="login">
+    <form action="" method="POST">
+    <h1>Login</h1>
+    <label>UserName</label>
+    <input type="text" name="username" required>
+    <label>Password</label>
+    <input type="password" name="password" required>
+    <button class="button1" name="submit">submit</button>
+   <button onclick="window.location.href='{{ url_for('public.register') }}'" class="button-71">Register</button>
+</form>
+</div>
+</body>

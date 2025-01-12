@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/welcome.css') }}">
+  <script src="{{ url_for('static', filename='js/welcome.js') }}"></script>
+</head>
+<body>
+  <div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>Dashboard</h2>
+      </div>
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="#profile">Profile</a></li>
+          <li><a href="/add_plot">Add Plot</a></li>
+          <li><a href="/view_plot">View Plots</a></li>
+          <li><a href="/find_plot">Find Plots</a></li>
+          <li><a href="/chat">Requests</a></li>
+          <li><a href="#reports">Reports</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <div class="main-content">
+      <!-- Header -->
+      <header class="header">
+        <div class="user-info">
+          <img  {%if img_yes==1 %} src="{{image_path}}"{% else %} src="{{ url_for('static', filename='img/profile.png') }}" {% endif %}class="profile-pic" style="width:100px; height:100px; border-radius:20%;">
+      
+            <label for="file-upload" class="upload-button">
+                <i class="fas fa-plus"></i> 
+            </label>
+
+    <!-- File Input (Hidden) -->
+    <input type="file" id="image-upload" name="image" accept="image/*">
+          <span class="user-name">{{ name }}</span>
+        </div>
+        <div class="notifications">
+          <span>Notifications</span>
+          <!-- Notification icon or bell -->
+        </div>
+      </header>
+
+      <!-- Content area -->
+      <div class="content">
+        <h1>Welcome, {{ name }}!</h1>
+        <div class="widgets">
+          <div class="widget">
+            <h3>Recent Activities</h3>
+            <!-- Content here -->
+          </div>
+          <div class="widget">
+            <h3>Statistics</h3>
+            <!-- Content here -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

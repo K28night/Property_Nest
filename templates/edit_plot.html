@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/add_plot.css') }}">
+    <title>Edit a Plot</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Edit a Plot</h2>
+    <form action="" method="POST" enctype="multipart/form-data">
+        
+        <!-- Personal Information -->
+        <div class="form-group">
+            <label >Full Name:</label>
+            <input type="text" id="full_name" name="name" value="{{plot.name if plot.name else ''}}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" value="{{ plot.email if plot.email else '' }}" required>
+        </div>
+
+       <!-- <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone"value="{{phno if phno else ''}}" required>
+        </div>-->
+        <div class="form-group" style="display: flex; align-items: center;">
+            <label for="phone">Phone Number:</label>
+            <!-- Dropdown for Country Code -->
+            <select id="country_code" name="country_code" required style="width: 70px; margin-right: 4px;">
+                <option value="+91" {% if country_code == '+91' %}selected{% endif %}>+91</option>
+                <option value="+1" {% if country_code == '+1' %}selected{% endif %}>+1</option>
+                <option value="+44" {% if country_code == '+44' %}selected{% endif %}>+44</option>
+                
+                <!-- Add more options as needed -->
+            </select>
+    
+            <!-- Input for Phone Number -->
+            <input type="tel" id="phno" name="phno" placeholder="1234567890" value="{{ plot.phno if plot.phno else '' }}" required style="flex: 1;">
+        </div>
+        <!-- Plot Details -->
+        <div class="form-group">
+            <label for="location">Location of the Plot:</label>
+            <input type="text" id="location" name="loc" placeholder="City/Town, Neighborhood" value="{{ plot.location if plot.location else '' }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="plot_size">Plot Size:</label>
+            <input type="text" id="size" name="size" placeholder="e.g., 5000 sqft, 2 acres" value="{{ plot.size if plot.size else '' }}" required>
+        </div>
+
+        <div class="form-group">
+            <label for="price">Asking Price:</label>
+            <input type="number" id="price" name="price" placeholder="e.g., 500000" value="{{ plot.price if plot.price else '' }}" required>
+        </div>
+
+        <!-- Additional Information -->
+        <div class="form-group">
+            <label for="features">Plot Features:</label>
+            <textarea id="features" name="feature" rows="4" placeholder="e.g., Near main road, good soil, zoning details..." value="{{ plot.features if plot.features else '' }}" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="availability">Availability for Viewing:</label>
+            <input type="text" id="availability" name="view" placeholder="e.g., Weekdays, Weekends, by appointment..." value="{{ plot.view if plot.view else '' }}" required>
+        </div>
+
+        <!-- Upload Images -->
+        <div class="form-group">
+            <label for="images">Upload Images:</label>
+            <input type="file" id="images" name="img" value="{{ plot.img if plot.img else '' }}" required multiple>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group">
+            <button type="submit" name="submit">Submit Plot </button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

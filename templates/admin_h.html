@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cycle Mart Admin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        main {
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background: #333;
+            color: #fff;
+        }
+        .btn {
+            padding: 8px 12px;
+            margin: 4px;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background: #28a745;
+        }
+        .btn-danger {
+            background: #dc3545;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cycle Mart Admin</h1>
+    </header>
+    <main>
+        <div class="container">
+            <h2>Manage Bikes</h2>
+
+            <form id="bikeForm">
+                <div class="form-group">
+                    <label for="name">Bike Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="price">Price:</label>
+                    <input type="number" id="price" name="price" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Bike</button>
+            </form>
+
+            <table id="bikeTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="bikeTableBody">
+                    <!-- Bikes will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script>
+        // Initial bike data (can be replaced with data from server)
+        const bikes = [
+            { id: 1, name: 'Mountain Bike', price: 500 },
+            { id: 2, name: 'Road Bike', price: 600 },
+            { id: 3, name: 'Hybrid Bike', price: 550 }
+        ];
+
+        function renderBikes() {
+            const bikeTableBody = document.getElementById('bikeTableBody');
+            bikeTableBody.innerHTML = '';
+            bikes.forEach(bike => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${bike.id}</td>
+                    <td>${bike.name}</td>
+                    <td>$${bike.price}</td>
+                    <td>
+                        <button class="btn btn-danger" onclick="deleteBike(${bike.id})">Delete</button>
+                    </td>
+                `;
+                bikeTableBody.appendChild(row);
+            });
+        }
+
+        function addBike(name, price) {
+            const newId = bikes.length > 0 ? bikes[bikes.length - 1].id + 1 : 1;
+            bikes.push({ id: newId, name, price });
+            renderBikes();
+        }
+
+        function deleteBike(id) {
+            const index = bikes.findIndex(bike => bike.id === id);
+            if (index > -1) {
+                bikes.splice(index, 1);
+                renderBikes();
+            }
+        }
+
+        document.getElementById('bikeForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const price = parseFloat(document.getElementById('price').value);
+            addBike(name, price);
+            this.reset();
+        });
+
+        // Initial render of bikes
+        renderBikes();
+    </script>
+</body>
+</html>
+
+

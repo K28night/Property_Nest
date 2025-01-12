@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PropertyNest - Find Your Dream Property</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <a class="navbar-brand" href="#"><image src="{{ url_for('static', filename='img/logo1.png') }}" 
+                width="100" height="40"></a></a>
+            <div class="logo">
+                <h1>PropertyNest</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="/login">Buy</a></li>
+                    <li><a href="/login">Sell</a></li>
+                    <li><a href="#">Rent</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <a href="#">Login / Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Find Your Dream Home or Plot Today!</h2>
+            <p>Explore a wide range of properties and make your move with confidence.</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn">Search Now</a>
+                <a href="#" class="btn">Browse Listings</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Properties -->
+    <section class="featured-properties">
+        <div class="container">
+            <h2>Featured Listings</h2>
+            <div class="property-cards">
+                {% for plot in plots %}
+                <div class="card">
+                    <img src="{{ plot.img }}" alt="{{ plot.img }}">
+                    <h3>Beautiful Family Home</h3>
+                    <p>New York, NY</p>
+                    <p>$500,000</p>
+                    <a href="#" class="btn">View Details</a>
+                </div>
+                {% endfor %}
+                
+                <!-- Add more intro cards as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <h3>Step 1</h3>
+                    <p>Search for Properties</p>
+                </div>
+                <div class="step">
+                    <h3>Step 2</h3>
+                    <p>Schedule a Viewing</p>
+                </div>
+                <div class="step">
+                    <h3>Step 3</h3>
+                    <p>Make an Offer or Apply</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonial-cards">
+                <div class="testimonial-card">
+                    <p>"PropertyNest made finding our new home so easy! Highly recommend."</p>
+                    <p>- Jane D.</p>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Great experience selling our property. The process was smooth and efficient."</p>
+                    <p>- John S.</p>
+                </div>
+                <!-- Add more testimonials as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Blog Posts -->
+    <section class="latest-blog">
+        <div class="container">
+            <h2>From Our Blog</h2>
+            <div class="blog-posts">
+                <div class="blog-post">
+                    <h3>Tips for First-Time Home Buyers</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+                <div class="blog-post">
+                    <h3>How to Prepare Your Home for Sale</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+                <!-- Add more blog posts as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Find Your Dream Property?</h2>
+            <a href="#" class="btn">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Us</a>
+            </div>
+            <div class="contact-info">
+                <p>1234 Real Estate St, Property City, PC 12345</p>
+                <p>Email: info@propertynest.com | Phone: (123) 456-7890</p>
+            </div>
+            <div class="social-media">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+            </div>
+            <div class="newsletter">
+                <form action="#">
+                    <input type="email" placeholder="Subscribe to our newsletter">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
