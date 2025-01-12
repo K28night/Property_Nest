@@ -1,0 +1,114 @@
+body {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    min-height: 100vh;       /* Full viewport height */
+           /* Remove default margin *//* Optional background color */
+    background-image: url("/static/img/back.jpg");
+    background-size: 1300px 1100px;; /* Adjusts the image to cover the entire element */
+   background-position: center; /* Centers the image within the element */
+}
+.login{
+align-items: center;        
+border: 1px solid black;
+width: 450px;
+height: 500px;
+/* background: url("/static/img/login.jpg"); */
+color: white;
+border-radius: 20px;
+box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.75);
+background-size: cover;
+background-position: center;
+overflow: hidden;
+}
+form{
+    display: block;
+    box-sizing: border-box;
+    padding: 40px;
+    width: 100%;
+    height: 100%; 
+    /* backdrop-filter: brightness(40%);
+    backdrop-filter: brigh; */
+   flex-direction: column;
+   display: flex;
+}
+h1{
+font-weight: normal;
+font-size: 24px;
+text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+margin-bottom: 60px;
+}
+label{
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 2px;
+    padding-left: 10px;
+
+}
+input{
+    background: rgba(255, 255, 255, 0.3);
+    height: 40px;
+    line-height: 40px;
+    border-radius: 20px;
+    padding: 0px 20px;
+    border: none;
+    margin-bottom: 20px;
+    color: white;   
+}
+button{
+    background: rgba(45, 231, 107, 0.774);
+    height: 40px;
+    line-height: 40px;
+    border-radius: 40px;
+    border:none;
+    margin: 10px 10px;
+    box-shadow:0px 0px 5px rgba(0,0, 0,0.3);
+    color: white;
+    font-size: 12px;
+ text-transform: uppercase;
+}
+.button-71 {
+    background-color: #d0720099;
+    border: 0;
+    border-radius: 56px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: system-ui,-apple-system,system-ui,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    outline: 0;
+    padding: 16px 21px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: all .3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  .button-71:before {
+    background-color: initial;
+    background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
+    border-radius: 125px;
+    content: "";
+    height: 50%;
+    left: 4%;
+    opacity: .5;
+    position: absolute;
+    top: 0;
+    transition: all .3s;
+    width: 92%;
+  }
+  
+  .button-71:hover {
+    box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
+    transform: scale(1.05);
+  }
+  
+  @media (min-width: 768px) {
+    .button-71 {
+      padding: 0px 48px;
+    }
+  }

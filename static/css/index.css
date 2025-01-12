@@ -1,0 +1,292 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 15px;
+    justify-content: space-between;
+}
+
+/* Header */
+header {
+    background: rgba(0, 128, 0, 0.5); /* Semi-transparent green */
+    color: #fff;
+    padding: 10px 0;
+}
+
+
+header img {
+    max-width: 100%;
+    float: left;
+    height: auto;
+}
+header nav {
+    float: left;
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header .user-profile {
+    float: right;
+}
+
+header .user-profile a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+    background: url("/static/img/intro.jpg") no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.2em;
+}
+
+.cta-buttons {
+    margin-top: 20px;
+}
+
+.cta-buttons .btn {
+    background-color: #ff910082;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 0 10px;
+}
+
+.cta-buttons .btn:hover {
+    background-color: #b36b00d9;
+}
+
+
+/* Featured Properties */
+.featured-properties {
+    padding: 40px 0;
+    background-color: #f9f9f9;
+}
+
+.featured-properties h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.property-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.card h3 {
+    margin: 10px 0;
+}
+
+.card .btn {
+    display: inline-block;
+    background-color: #0080ffcf;
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.card .btn:hover {
+    background-color: #0056b3;
+}
+
+/* How It Works */
+.how-it-works {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.how-it-works h2 {
+    margin-bottom: 20px;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-between;
+}
+
+.step {
+    width: 30%;
+}
+
+.step h3 {
+    margin-top: 0;
+}
+
+/* Testimonials */
+.testimonials {
+    padding: 40px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.testimonials h2 {
+    margin-bottom: 20px;
+}
+
+.testimonial-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.testimonial-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    width: 45%;
+    margin-bottom: 20px;
+}
+
+/* Latest Blog Posts */
+.latest-blog {
+    padding: 40px 0;
+}
+
+.latest-blog h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.blog-posts {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.blog-post {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    width: 45%;
+    margin-bottom: 20px;
+}
+
+.blog-post h3 {
+    margin-top: 0;
+}
+
+/* Call to Action */
+.cta {
+    background-color: #00ffaec9;
+    color: #fff;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.cta h2 {
+    margin: 0 0 20px;
+}
+
+.cta .btn {
+    background-color: #fff;
+    color: #007bff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.cta .btn:hover {
+    background-color: #e0e0e0;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer .footer-links a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer .contact-info p {
+    margin: 5px 0;
+}
+
+footer .social-media a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer .newsletter form {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+footer .newsletter input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    width: 300px;
+}
+
+footer .newsletter button {
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+footer .newsletter button:hover {
+    background-color: #0056b3;
+}
